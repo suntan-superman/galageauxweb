@@ -1,3 +1,5 @@
+import { getHtmlCopyrightText } from '../appInfo.js';
+
 export function renderAbout() {
   return `
     <header>
@@ -58,7 +60,7 @@ export function renderAbout() {
 
     <footer>
       <div class="container">
-        <p>&copy; 2025 Galageaux. All rights reserved.</p>
+        <p>${getHtmlCopyrightText()}</p>
         <p style="margin-top: 0.5rem;">
           <a href="/terms">Terms of Service</a> | 
           <a href="/privacy">Privacy Policy</a> | 

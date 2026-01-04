@@ -1,3 +1,5 @@
+import { getHtmlCopyrightText, getLastUpdatedText } from '../appInfo.js';
+
 export function renderPrivacy() {
   return `
     <header>
@@ -18,7 +20,7 @@ export function renderPrivacy() {
       <div class="container">
         <div class="card">
           <h2>Privacy Policy</h2>
-          <p><strong>Last Updated: January 2025</strong></p>
+          <p><strong>Last Updated: ${getLastUpdatedText('January')}</strong></p>
 
           <h3>1. Introduction</h3>
           <p>
@@ -126,7 +128,7 @@ export function renderPrivacy() {
 
     <footer>
       <div class="container">
-        <p>&copy; 2025 Galageaux. All rights reserved.</p>
+        <p>${getHtmlCopyrightText()}</p>
         <p style="margin-top: 0.5rem;">
           <a href="/terms">Terms of Service</a> | 
           <a href="/privacy">Privacy Policy</a> | 
