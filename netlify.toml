@@ -2,8 +2,14 @@
   command = "npm run build"
   publish = "dist"
 
+# Allow ACME challenge path for TLS validation
+[[redirects]]
+  from = "/.well-known/*"
+  to = "/.well-known/:splat"
+  status = 200
+
+# SPA fallback
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
