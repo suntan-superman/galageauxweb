@@ -11,7 +11,7 @@ export const APP_INFO = {
   companyName: 'Galageaux',
   siteUrl: 'https://galageaux.com',
   appStoreUrl: '',
-  supportEmail: '',
+  supportEmail: import.meta.env.VITE_SUPPORT_EMAIL || '',
   ogImage: '',
 };
 
