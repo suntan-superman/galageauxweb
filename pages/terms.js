@@ -9,7 +9,7 @@ export function renderTerms() {
     className: 'text-page legal-page',
     content: `
       <article class="prose-card legal-card">
-        <p class="lead">These terms describe use of the Galageaux V1 mobile arcade game. They are a concise product draft and require human/legal review before publication.</p>
+        <p class="lead">These terms describe use of the Galageaux V1 mobile arcade game.</p>
         <h2>Using the game</h2>
         <p>Galageaux is a three-stage mobile arcade shooter provided for personal entertainment. You may play without creating an account. V1 does not promise cloud saves, online services, online leaderboards, or uninterrupted availability.</p>
         <h2>Your responsibilities</h2>
@@ -20,8 +20,6 @@ export function renderTerms() {
         <p>The game, its content, and these terms may change as the product is maintained. We may suspend or discontinue access where necessary to operate, protect, or update the service.</p>
         <h2>Disclaimer</h2>
         <p>The app is provided on an as-available basis to the extent permitted by applicable law. Nothing on this page creates a warranty or changes rights that cannot legally be waived.</p>
-        <h2>Review note</h2>
-        <p>Ownership attribution, governing law, refund language, age guidance, store terms, and a confirmed support destination still require project-owner and legal confirmation. No corporate legal entity is asserted here.</p>
       </article>
     `,
   });
