@@ -1,56 +1,24 @@
-# Galageaux Website
+# Galageaux Web
 
-Website for the Galageaux mobile game, built with Vite and vanilla JavaScript.
+Lightweight Vite + vanilla JavaScript website for the Galageaux mobile arcade game.
 
 ## Development
 
-```bash
-# Install dependencies
-npm install
+    npm install
+    npm run dev
 
-# Start development server
-npm run dev
+Build the Netlify release bundle with:
 
-# Build for production
-npm run build
+    npm run build
 
-# Preview production build
-npm run preview
-```
+The production output is written to dist. The site keeps the existing SPA fallback
+and supports /, /about, /support, /privacy, and /terms.
 
-## Deployment
+## Release configuration
 
-This site is configured for Netlify deployment. Simply connect your repository to Netlify and it will automatically build and deploy.
+Add the confirmed App Store listing and real support contact in appInfo.js before
+release. Approved physical-iPhone gameplay captures belong under
+public/images/gameplay/; see that folder's README for the intended slots.
 
-The `netlify.toml` file includes:
-- Build command: `npm run build`
-- Publish directory: `dist`
-- SPA redirect rules for client-side routing
-
-## Project Structure
-
-```
-galageauxweb/
-├── index.html          # Main HTML file
-├── main.js            # App entry point
-├── router.js          # Client-side routing
-├── style.css          # Global styles
-├── pages/             # Page components
-│   ├── home.js        # Home page
-│   ├── about.js       # About page
-│   ├── terms.js       # Terms of Service
-│   └── privacy.js     # Privacy Policy
-├── package.json       # Dependencies
-├── vite.config.js    # Vite configuration
-└── netlify.toml      # Netlify configuration
-```
-
-## Features
-
-- Responsive design
-- Client-side routing
-- Dark space theme matching the game
-- Terms of Service and Privacy Policy pages
-- About page with game information
-- Netlify-ready deployment configuration
-
+See GALAGEAUXWEB_V1_RELEASE_REFRESH.md for the refresh details, validation results,
+open release inputs, and post-deployment checklist.

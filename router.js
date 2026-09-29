@@ -43,8 +43,14 @@ export function initRouter(routes) {
     const link = event.target.closest('a');
     if (!link || link.origin !== window.location.origin || !link.pathname.startsWith('/')) return;
 
-    event.preventDefault();
     const path = normalizePath(link.pathname);
+    if (link.hash && path === normalizePath(window.location.pathname)) {
+      event.preventDefault();
+      document.querySelector(link.hash)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+
+    event.preventDefault();
     window.history.pushState({}, '', path);
     render(path, { focus: true });
   });
