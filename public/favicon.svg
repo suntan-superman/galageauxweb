@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Galageaux">
+  <rect width="64" height="64" rx="16" fill="#060916"/>
+  <path d="M32 10 39 28l13 5-13 5-7 17-7-17-13-5 13-5 7-18Z" fill="#58e8ff"/>
+  <path d="m32 19 3.5 11 8 3-8 3L32 47l-3.5-11-8-3 8-3L32 19Z" fill="#b16cff"/>
+</svg>

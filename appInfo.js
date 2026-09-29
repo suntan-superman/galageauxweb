@@ -1,25 +1,27 @@
 /**
- * Application Information Constants for Web
- * 
- * Central location for app-wide information like version, copyright year, etc.
- * Update these values in one place to reflect changes across the entire website.
+ * Release-facing website configuration.
+ *
+ * Keep release-specific destinations here so an App Store URL or real support
+ * contact can be added once confirmed without searching through page markup.
  */
-
 export const APP_INFO = {
   name: 'Galageaux',
   version: '1.0.0',
   copyrightYear: 2026,
   companyName: 'Galageaux',
+  siteUrl: 'https://galageaux.com',
+  appStoreUrl: '',
+  supportEmail: '',
+  ogImage: '',
 };
 
-// Helper function to generate copyright HTML
-export const getHtmlCopyrightText = () => {
-  return `&copy; ${APP_INFO.copyrightYear} ${APP_INFO.name}. All rights reserved.`;
-};
+export const getHtmlCopyrightText = () =>
+  `&copy; ${APP_INFO.copyrightYear} ${APP_INFO.name}. All rights reserved.`;
 
-// For "Last Updated" text on legal pages
-export const getLastUpdatedText = (month = 'January') => {
-  return `${month} ${APP_INFO.copyrightYear}`;
-};
+export const getLastUpdatedText = () => 'September 2026';
+
+export const hasAppStoreLink = () => Boolean(APP_INFO.appStoreUrl);
+
+export const hasSupportEmail = () => Boolean(APP_INFO.supportEmail);
 
 export default APP_INFO;

@@ -1,38 +1,54 @@
 export function initRouter(routes) {
   const app = document.getElementById('app');
-  
-  function render(path) {
-    const route = routes[path] || routes['/'];
-    if (route) {
-      app.innerHTML = route();
-      updateActiveLink(path);
-    }
-  }
-  
-  function updateActiveLink(path) {
-    document.querySelectorAll('nav a').forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === path) {
-        link.classList.add('active');
+  if (!app) return;
+
+  const normalizePath = path => {
+    const cleanPath = path.replace(/\/+$/, '');
+    return cleanPath || '/';
+  };
+
+  function render(path, { focus = false } = {}) {
+    const normalizedPath = normalizePath(path);
+    const route = routes[normalizedPath] || routes['/'];
+    app.innerHTML = route();
+    updateActiveLink(normalizedPath);
+    if (focus) {
+      const main = app.querySelector('main');
+      if (main) {
+        main.setAttribute('tabindex', '-1');
+        main.focus({ preventScroll: true });
       }
+    }
+    window.scrollTo(0, 0);
+  }
+
+  function updateActiveLink(path) {
+    document.querySelectorAll('[data-site-nav] a').forEach(link => {
+      const isActive = link.getAttribute('href') === path;
+      link.classList.toggle('active', isActive);
+      if (isActive) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
     });
   }
-  
-  function handleNavigation(e) {
-    if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('/')) {
-      e.preventDefault();
-      const path = e.target.getAttribute('href');
-      window.history.pushState({}, '', path);
-      render(path);
+
+  document.addEventListener('click', event => {
+    const menuButton = event.target.closest('[data-menu-toggle]');
+    if (menuButton) {
+      const nav = document.getElementById('site-nav');
+      const isOpen = nav?.classList.toggle('is-open') ?? false;
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      return;
     }
-  }
-  
-  document.addEventListener('click', handleNavigation);
-  window.addEventListener('popstate', () => {
-    render(window.location.pathname);
+
+    const link = event.target.closest('a');
+    if (!link || link.origin !== window.location.origin || !link.pathname.startsWith('/')) return;
+
+    event.preventDefault();
+    const path = normalizePath(link.pathname);
+    window.history.pushState({}, '', path);
+    render(path, { focus: true });
   });
-  
-  // Initial render
+
+  window.addEventListener('popstate', () => render(window.location.pathname, { focus: true }));
   render(window.location.pathname);
 }
-
