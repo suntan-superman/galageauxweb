@@ -1,13 +1,11 @@
-# Gameplay screenshot slots
+# Approved gameplay captures
 
-Replace the CSS placeholder figures on the homepage with approved physical-iPhone
-captures from the current release candidate. Suggested filenames:
+These original physical-iPhone screenshots are approved representations of the
+shipped Galageaux V1 game. Keep the source images unchanged and preserve their
+native aspect ratio when presenting them on the site.
 
-- stage1.webp
-- enemy-attack.webp
-- boss.webp
-- powerup.webp
-- show-me.webp
-
-Do not add unrelated stock artwork or fabricated gameplay screenshots. Update the
-renderScreenshotPlaceholder calls in pages/home.js when the approved files exist.
+- stage3-action.png — primary hero/current-game capture
+- stage2-action.png — enemy choreography/gameplay capture
+- inferno-citadel.png — primary boss/campaign capture
+- show-me.png — Show Me / Learn by Watching capture
+- violet-wraith.png — secondary campaign capture

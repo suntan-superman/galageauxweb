@@ -77,7 +77,6 @@ export function renderSupport() {
           <span class="support-index">08</span>
           <h2>Contact</h2>
           <p>${renderSupportContact()}</p>
-          <small>Before release, add the confirmed support address in <code>appInfo.js</code> as <code>supportEmail</code>.</small>
         </article>
       </div>
       <p class="page-updated">Support guide last reviewed ${getLastUpdatedText()}.</p>

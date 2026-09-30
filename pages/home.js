@@ -2,7 +2,6 @@ import {
   renderAppStoreCta,
   renderFooter,
   renderHeader,
-  renderScreenshotPlaceholder,
   renderSectionHeading,
 } from './layout.js';
 
@@ -35,12 +34,9 @@ export function renderHome() {
               <span><b>∞</b> replay runs</span>
             </div>
           </div>
-          ${renderScreenshotPlaceholder({
-            label: 'STAGE 01  /  004812',
-            title: 'Current-game capture slot',
-            caption: 'Replace with a physical-iPhone screenshot from the release candidate.',
-            tone: 'violet',
-          })}
+          <figure class="gameplay-shot hero-shot">
+            <img src="/images/gameplay/stage3-action.png" alt="Physical iPhone screenshot of Galageaux during a bonus shoot-out, showing the player ship, score HUD, countdown, and Fire controls." width="1242" height="2688" fetchpriority="high">
+          </figure>
         </div>
       </section>
 
@@ -50,12 +46,9 @@ export function renderHome() {
             ${renderSectionHeading('01 / ENEMY CHOREOGRAPHY', 'They don\'t just fly. They come after you.', 'Formations are only the beginning. Enemies break away, bank into turns, dive on curved paths, coordinate attacks, and fight their way back into formation.')}
             <a class="text-link" href="/about">Read the gameplay philosophy <span aria-hidden="true">→</span></a>
           </div>
-          <div class="signal-panel" aria-label="Enemy attack sequence">
-            <div class="signal-row"><span class="signal-number">01</span><span class="signal-line"></span><strong>FORM</strong><small>entrance</small></div>
-            <div class="signal-row signal-active"><span class="signal-number">02</span><span class="signal-line"></span><strong>DIVE</strong><small>breakaway</small></div>
-            <div class="signal-row"><span class="signal-number">03</span><span class="signal-line"></span><strong>BANK</strong><small>curved attack</small></div>
-            <div class="signal-row"><span class="signal-number">04</span><span class="signal-line"></span><strong>RETURN</strong><small>re-form</small></div>
-          </div>
+          <figure class="gameplay-shot enemy-shot">
+            <img src="/images/gameplay/stage2-action.png" alt="Physical iPhone screenshot of Galageaux with a colorful enemy formation, incoming projectiles, player ship, and Fire controls visible." width="1242" height="2688" loading="lazy" decoding="async">
+          </figure>
         </div>
       </section>
 
@@ -105,6 +98,14 @@ export function renderHome() {
             ${renderSectionHeading('04 / THE CAMPAIGN', 'Three stages. Three guardians.', 'Telegraphed attacks. Multi-phase encounters. Enough room to learn the pattern before the pattern learns you.')}
             <span class="stage-count" aria-label="Three active stages"><b>03</b><small>active<br>stages</small></span>
           </div>
+          <div class="boss-visuals">
+            <figure class="gameplay-shot boss-shot">
+              <img src="/images/gameplay/inferno-citadel.png" alt="Physical iPhone screenshot of a Galageaux boss encounter with a purple guardian, boss health bar, stage HUD, and Fire controls visible." width="1242" height="2688" loading="lazy" decoding="async">
+            </figure>
+            <figure class="gameplay-shot secondary-boss-shot">
+              <img src="/images/gameplay/violet-wraith.png" alt="Physical iPhone screenshot of Galageaux showing a dense stage two enemy formation, projectiles, player ship, and Fire controls." width="1242" height="2688" loading="lazy" decoding="async">
+            </figure>
+          </div>
           <div class="boss-grid">
             <article class="boss-card boss-aegis"><span class="boss-index">BOSS / 01</span><h3>Aegis Sentinel</h3><p>Read the opening. Find the gap.</p><span class="boss-mark" aria-hidden="true"></span></article>
             <article class="boss-card boss-wraith"><span class="boss-index">BOSS / 02</span><h3>Violet Wraith</h3><p>Stay loose through the feint.</p><span class="boss-mark" aria-hidden="true"></span></article>
@@ -115,12 +116,9 @@ export function renderHome() {
 
       <section class="section section-dark">
         <div class="shell show-me-grid">
-          ${renderScreenshotPlaceholder({
-            label: 'SHOW ME  /  LIVE DEMO',
-            title: 'A lesson that moves',
-            caption: 'Replace with a Show Me capture when final screenshots are available.',
-            tone: 'cyan',
-          })}
+          <figure class="gameplay-shot show-me-shot">
+            <img src="/images/gameplay/show-me.png" alt="Physical iPhone screenshot of a Galageaux boss encounter with the Aegis Sentinel, stage HUD, incoming fire, and Fire controls visible." width="1242" height="2688" loading="lazy" decoding="async">
+          </figure>
           <div class="section-copy">
             ${renderSectionHeading('05 / SHOW ME', 'Learn by watching.', 'Show Me demonstrates movement, firing, powerups, and boss behavior through live simulated play—not a page of instructions.')}
             <a class="text-link" href="/support">See the controls guide <span aria-hidden="true">→</span></a>

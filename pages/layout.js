@@ -86,27 +86,7 @@ export function renderSupportContact() {
     return `<a href="mailto:${APP_INFO.supportEmail}">${APP_INFO.supportEmail}</a>`;
   }
 
-  return `<span class="muted">Direct support contact is not configured yet.</span>`;
-}
-
-export function renderScreenshotPlaceholder({ label, title, caption, tone = 'cyan' }) {
-  return `
-    <figure class="screenshot-placeholder placeholder-${tone}">
-      <div class="placeholder-screen" aria-hidden="true">
-        <span class="placeholder-grid"></span>
-        <span class="placeholder-orbit orbit-one"></span>
-        <span class="placeholder-orbit orbit-two"></span>
-        <span class="placeholder-ship"></span>
-        <span class="placeholder-enemy enemy-one"></span>
-        <span class="placeholder-enemy enemy-two"></span>
-        <span class="placeholder-enemy enemy-three"></span>
-        <span class="placeholder-shot shot-one"></span>
-        <span class="placeholder-shot shot-two"></span>
-        <span class="placeholder-hud">${label}</span>
-      </div>
-      <figcaption><strong>${title}</strong><span>${caption}</span></figcaption>
-    </figure>
-  `;
+  return `<span class="muted">Support contact is currently unavailable.</span>`;
 }
 
 export function renderSectionHeading(eyebrow, title, copy = '') {
