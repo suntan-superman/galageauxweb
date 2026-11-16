@@ -36,7 +36,7 @@ export function renderAbout() {
       </div>
       <section class="about-note">
         <p class="eyebrow">INSPIRATION</p>
-        <p>Galageaux is an original game inspired by classic arcade space shooters. It is not affiliated with or endorsed by any other game publisher or franchise.</p>
+        <p>Galageaux is an original game inspired by classic arcade space shooters. It is not affiliated with or endorsed by any other game publisher or franchise.</p><p>Galageaux is a Workside Software product. <a href="https://worksidesoftware.com/">Learn about Workside Software</a>.</p>
       </section>
     `,
   });
